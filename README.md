@@ -1,4 +1,6 @@
-# Smurfware's Stage Master
+# Smurfware's StageMaster
+
+![smurfwareLogo](https://github.com/Iheb-AG/smurfwareStageMaster/assets/101937924/fd4dabc8-de56-4dc9-aab1-3095ea984e04)
 
 A powerful and user-friendly music player with modern interface dedicated to clubs , 
 
@@ -34,7 +36,12 @@ We have upcoming plans for StageMaster. Some of them are:
 - styling the interface
 - adding 3d scene
 - section for controlling 3d scene
-- implement scene interactivity with the music 
+- implement scene interactivity with the music
+
+Here is a simple Schema explaning the interface to build
+![image](https://github.com/Iheb-AG/smurfwareStageMaster/assets/101937924/909cbf41-b6c0-4442-8ef5-195dd7943eb9)
+
+
 
 
 ## Acknowledgements
