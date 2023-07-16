@@ -19,9 +19,8 @@ A powerful and user-friendly music player with modern interface dedicated to clu
 
 
 ## Usage
-1. launch the program using `npm run dev`
-2. Launch the application by typing on your terminal `npm run dev` navigating to `http://localhost:5173` in your browser. (ports can differ from machine to machine)
-3. Enjoy !
+1. Launch the application by typing on your terminal `npm run dev` navigating to `http://localhost:5173` in your browser. (ports can differ from machine to machine)
+2. Enjoy !
 
 ## Features
 - adding music from your local machine
