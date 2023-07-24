@@ -42,7 +42,7 @@ export default function AudioComponent(props){
   // },[AudioRef.current.currentTime])
 
   return (
-    <div>
+    <>
         <audio src={currentTrackUrl} ref={AudioRef} onTimeUpdate={(e)=>{setcurrentTime(e.currentTarget.currentTime)}} onDurationChange={(e)=>{setDuration(e.currentTarget.duration)}}/> 
         
         {/* <input type="button" value="previous" onClick={handlePrevious} /> */}
@@ -63,6 +63,6 @@ export default function AudioComponent(props){
         <h1>duration : {duration}</h1>
         <h1>current position : {Math.floor(currentTime)} seconds</h1>
 
-    </div>
+    </>
   )
 }

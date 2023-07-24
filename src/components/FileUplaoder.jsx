@@ -1,11 +1,16 @@
-import { useState, createContext, useRef } from 'react'
+import { useState, createContext, useRef, useEffect } from 'react'
 import AudioComponent from './AudioComponent'
+import { BiPlus } from 'react-icons/bi'
 // the file uploader will send it's urlPlaylist to audio component to complete making the track object
 export default function FileUploader() {
 
   const [urlPlaylist, setUrlPlaylist] = useState([])
   const urltrackRef = useRef(null)
 
+
+  function handlehiddenInput(e){
+    urltrackRef.current.click()
+  }
 
   function handleUpload(e) {
     //no errors are handled 
@@ -19,10 +24,21 @@ export default function FileUploader() {
     })
   }
 
+  useEffect(()=>{
+    document.getElementById("upload_button").addEventListener("click",()=>{
+      document.getElementById("instructions").style.display="none"
+    })
+  },[])
+
+
   return (
-    <>
-      <input type="file" ref={urltrackRef} accept='audio/*' onChange={(e) => handleUpload(e)} />
+    <div>
+      <h3 id='instructions'>click the "+" icon to upload songs</h3>
+      <input style={{display:"none"}} type="file" ref={urltrackRef} accept='audio/*' onChange={(e) => handleUpload(e)} />
+      <button id='upload_button' onClick={handlehiddenInput}>
+        <BiPlus />
+      </button>
       {urlPlaylist.length > 0 ? <AudioComponent urlPlaylist={urlPlaylist} /> : <></>}
-    </>
+    </div>
   )
 } 
