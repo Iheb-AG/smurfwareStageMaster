@@ -2,6 +2,7 @@ import { useState , createContext , useContext , useRef } from 'react'
 import './App.css'
 import FileUploader from './components/FileUplaoder'
 import AudioComponent from './components/AudioComponent'
+import Timer from './components/Timer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <FileUploader >
         <AudioComponent/>
       </FileUploader>
+        <Timer/>
     </>
   )
 }
