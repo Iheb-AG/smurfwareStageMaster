@@ -1,6 +1,9 @@
 import { useEffect, useState , useRef } from "react";
 import {BiPause, BiPlay, BiSkipNext, BiSkipPrevious} from 'react-icons/bi'
+import '../App.css'
 
+//TODO : ADD A AN AUDIO SLIDER 
+//TODO : FORMAT THE AUDIO TIMER
 export default function AudioComponent(props){
   //creating player refrence
   const AudioRef = useRef(null)
@@ -42,7 +45,7 @@ export default function AudioComponent(props){
   // },[AudioRef.current.currentTime])
 
   return (
-    <>
+    <div id="AudioComponent">
         <audio src={currentTrackUrl} ref={AudioRef} onTimeUpdate={(e)=>{setcurrentTime(e.currentTarget.currentTime)}} onDurationChange={(e)=>{setDuration(e.currentTarget.duration)}}/> 
         
         {/* <input type="button" value="previous" onClick={handlePrevious} /> */}
@@ -60,9 +63,9 @@ export default function AudioComponent(props){
           <BiSkipNext/>
         </button>
         
-        <h1>duration : {duration}</h1>
-        <h1>current position : {Math.floor(currentTime)} seconds</h1>
+        {/* <h1>duration : {duration}</h1> */}
+        <h1>time : {Math.floor(currentTime)}/{Math.floor(duration)}</h1>
 
-    </>
+    </div>
   )
 }

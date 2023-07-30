@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
+import '../App.css'
 
-
-export default function Timer(){
+export default function Timer(props){
   const [houres,setHoures] = useState("00")
   const [minutes, setMinutes] = useState("00")
   const [seconds, setSeconds] = useState("00") 
@@ -19,11 +19,12 @@ export default function Timer(){
     setSeconds("00")
     setHoures("00")
     setReset(true)
+    console.log(reset)
   }
 
   function handleTimerStart(e){
     e.preventDefault()
-    let time = parseInt(seconds) + parseInt(minutes)*60 + parseInt(houres)*3600
+    let time = parseInt(seconds) + parseInt(minutes)*60 + parseInt(houres)*3600 -1
 
     const timer = setInterval(() => {
     //String((parseInt(prevValue)-1)%60)
@@ -37,21 +38,20 @@ export default function Timer(){
     
     time = time-1
     
-      if((time==-1)||(reset==true)){
-        time = 0
-        setHoures("00")
-        setMinutes("00")
-        setSeconds("00")
-        clearInterval(timer)
-      }
-
-      setReset(false)
-    }, 1000);
     
+    if((time==-1)||(reset)){
+      setHoures("00")
+      setMinutes("00")
+      setSeconds("00")
+      time = 0
+      clearInterval(timer)
+    }
+    
+  }, 1000);
     // setReset(false)
   }
   return (
-    <div>
+    <div id="Timer">
       {/* getting the time using input */}
       <label htmlFor="Timer">Timer : </label>
       <div className="timer_display" style={{display:"flex" ,justifyContent:"center"}}>
